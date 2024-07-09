@@ -1,0 +1,9 @@
+.idea/
+dist/
+node_modules/
+yarn-error.log
+package
+.yarn/*
+
+# Local Netlify folder
+.netlify
