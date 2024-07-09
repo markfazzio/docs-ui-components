@@ -1,13 +1,22 @@
-import type { StorybookConfig } from '@storybook/react-webpack5';
+import type { StorybookConfig } from '@storybook/react-vite';
+
+const viteTsconfig = require('vite-tsconfig-paths');
+const tsconfigPaths = viteTsconfig.default;
+const { mergeConfig } = require('vite');
 
 const config: StorybookConfig = {
   // Required
-  framework: '@storybook/react-webpack5',
+  framework: '@storybook/react-vite',
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
   // Optional
   addons: ['@storybook/addon-controls', '@storybook/preset-scss'],
-  docs: {
-    autodocs: 'tag',
+  core: {
+    builder: '@storybook/builder-vite',
+  },
+  async viteFinal(config) {
+    return mergeConfig(config, {
+      plugins: [tsconfigPaths()],
+    });
   },
 };
 
