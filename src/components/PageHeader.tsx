@@ -1,29 +1,19 @@
+import { ReactNode } from 'react';
 import { BackButton } from './BackButton';
 
-export const PageHeader = () => {
+interface PageHeaderProps {
+  children?: ReactNode;
+  title?: string;
+}
+
+export const PageHeader = (props: PageHeaderProps) => {
+  const { title, children } = props;
+
   return (
     <div className="sm:grid grid-cols-2 items-center mb-8">
       <div className="course-meta mb-6 sm:mb-0">
-        <h1 className="text-4xl mb-2">JS Interview Prep</h1>
-        <p>
-          Quick refresher/guide to JavaScript for all experience levels. This is
-          by no means a comprehensive guide. For that,{' '}
-          <a
-            className="hover:underline font-semibold"
-            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-            target="_blank"
-            rel="noreferrer">
-            View the MDN JavaScript Guide
-          </a>
-          . Make sure to also check out:{' '}
-          <a
-            className="hover:underline font-semibold"
-            href="https://ts-interview-prep.vercel.app"
-            target="_blank"
-            rel="noreferrer">
-            TypeScript Interview Prep
-          </a>
-        </p>
+        <h1 className="text-4xl mb-2">{title}</h1>
+        {children}
       </div>
       <div className="course-actions text-end">
         <BackButton />
