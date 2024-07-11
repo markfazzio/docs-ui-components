@@ -15,3 +15,4 @@ export { SectionMain } from './components/SectionMain';
 export { SectionMainTitle } from './components/SectionMainTitle';
 export { SectionSubTitle } from './components/SectionSubTitle';
 export { SwitchTheme } from './components/SwitchTheme';
+export { Table } from './components/Table';
