@@ -7,8 +7,13 @@ import {
 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 import { ThemeProps } from '../common/interfaces';
+import { ReactNode } from 'react';
 
-interface CodeBlockProps extends ThemeProps, SyntaxHighlighterProps {}
+interface CodeBlockProps
+  extends ThemeProps,
+    Omit<SyntaxHighlighterProps, 'children'> {
+  children?: ReactNode;
+}
 
 export const CodeBlock = (props: CodeBlockProps) => {
   const { children, className = 'mb-3', language, theme } = props;
@@ -19,7 +24,7 @@ export const CodeBlock = (props: CodeBlockProps) => {
       language={language}
       className={className}
       style={highlighterTheme}>
-      {children}
+      {children as string[]}
     </SyntaxHighlighter>
   );
 };
