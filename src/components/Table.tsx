@@ -12,8 +12,9 @@ export const Table = (props: TableProps) => {
     <table className="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
       <thead>
         <tr>
-          {columns.map((column: TableColumnProps) => (
+          {columns.map((column: TableColumnProps, index: number) => (
             <th
+              key={`column-${index}-${column.label}`}
               scope="col"
               className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">
               {column.label}
