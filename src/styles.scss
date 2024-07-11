@@ -23,11 +23,6 @@ html {
   section {
     background: var(--color-primary);
   }
-
-  .menu-item:hover,
-  .menu-item.active {
-    background: #f8f8f8;
-  }
 }
 
 .theme-dark {
@@ -47,16 +42,20 @@ html {
   section {
     background: rgb(15 23 42);
   }
+}
 
+.navbar-dark {
   .menu-item:hover,
   .menu-item.active {
     background-color: rgb(22 101 52);
   }
 }
 
-pre {
-  white-space: break-spaces;
-  overflow: auto;
+.navbar-light {
+  .menu-item:hover,
+  .menu-item.active {
+    background: #f8f8f8;
+  }
 }
 
 /* check dark mode */

@@ -1,3 +1,4 @@
+import { ThemeProps } from '@/common/interfaces';
 import { useState } from 'react';
 
 interface NavbarItemProps {
@@ -5,19 +6,25 @@ interface NavbarItemProps {
   value: string;
 }
 
-interface NavbarProps {
+interface NavbarProps extends ThemeProps {
   activeId?: string;
   className?: string;
   navItems?: Array<NavbarItemProps>;
 }
 
 export const Navbar = (props: NavbarProps) => {
-  const { activeId, className, navItems } = props;
+  const { activeId, className, navItems, theme = 'dark' } = props;
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const defaultBgClassName =
+    theme === 'light'
+      ? 'navbar-light bg-gray-100'
+      : 'navbar-dark text-white bg-green-900';
+
   return (
-    <nav className={`fixed w-full top-0 left-0 px-10 ${className}`}>
+    <nav
+      className={`fixed w-full top-0 left-0 px-10 ${className} ${defaultBgClassName}`}>
       <div className="max-w-screen-xl">
         <div className="md:hidden flex items-center">
           <div>
@@ -39,9 +46,9 @@ export const Navbar = (props: NavbarProps) => {
                 viewBox="0 0 17 14">
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M1 1h15M1 7h15M1 13h15"
                 />
               </svg>

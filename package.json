@@ -1,6 +1,6 @@
 {
   "name": "@markfazzio/docs-ui-components",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "css": "docs-ui-components.css",
@@ -8,7 +8,7 @@
   "author": "Mark Fazzio",
   "types": "dist/docs-ui-components.d.ts",
   "scripts": {
-    "build": "rollup -c",
+    "build": "pnpm clean && rollup -c",
     "build:local": "pnpm build && cd dist && pnpm link",
     "build:publish": "pnpm install --frozen-lockfile && pnpm build && cd dist && npm publish",
     "build:storybook": "storybook build",
@@ -21,8 +21,7 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwindcss": "^3.4.4"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
@@ -65,6 +64,7 @@
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^4.0.0",
     "rollup-plugin-tsconfig-paths": "^1.5.2",
     "sass": "^1.77.6",
@@ -83,5 +83,8 @@
     "classnames": "^2.3.1",
     "react-syntax-highlighter": "^15.5.0"
   },
-  "packageManager": "pnpm@9.5.0"
+  "packageManager": "pnpm@9.5.0",
+  "exports": {
+    "./css": "./dist/style.css"
+  }
 }

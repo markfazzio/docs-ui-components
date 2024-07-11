@@ -22,10 +22,12 @@ export const LightTheme = Template.bind({});
 LightTheme.args = {
   className: 'bg-gray-100',
   navItems: SECTIONS,
+  theme: 'light',
 };
 
 export const DarkTheme = Template.bind({});
 DarkTheme.args = {
   className: 'bg-green-900',
   navItems: SECTIONS,
+  theme: 'dark',
 };

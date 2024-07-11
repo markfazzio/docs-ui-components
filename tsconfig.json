@@ -6,7 +6,7 @@
     "declarationDir": "dist/types",
     "downlevelIteration": true,
     "esModuleInterop": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "lib": ["ES6", "DOM", "ES2021"],
     "module": "ESNext",
     "moduleResolution": "bundler",
