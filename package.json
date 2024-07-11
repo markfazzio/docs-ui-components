@@ -1,6 +1,6 @@
 {
   "name": "@markfazzio/docs-ui-components",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "css": "docs-ui-components.css",
@@ -83,8 +83,5 @@
     "classnames": "^2.3.1",
     "react-syntax-highlighter": "^15.5.0"
   },
-  "packageManager": "pnpm@9.5.0",
-  "exports": {
-    "./css": "./dist/style.css"
-  }
+  "packageManager": "pnpm@9.5.0"
 }
