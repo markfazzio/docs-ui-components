@@ -6,7 +6,7 @@ import {
   agate,
 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
-import { ThemeProps } from '@/common/interfaces';
+import { ThemeProps } from '../common/interfaces';
 
 interface CodeBlockProps extends ThemeProps, SyntaxHighlighterProps {}
 

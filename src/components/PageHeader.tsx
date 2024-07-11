@@ -1,4 +1,4 @@
-import { BackButton } from "./BackButton";
+import { BackButton } from './BackButton';
 
 export const PageHeader = () => {
   return (
@@ -7,20 +7,20 @@ export const PageHeader = () => {
         <h1 className="text-4xl mb-2">JS Interview Prep</h1>
         <p>
           Quick refresher/guide to JavaScript for all experience levels. This is
-          by no means a comprehensive guide. For that,{" "}
+          by no means a comprehensive guide. For that,{' '}
           <a
             className="hover:underline font-semibold"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
             target="_blank"
-          >
+            rel="noreferrer">
             View the MDN JavaScript Guide
           </a>
-          . Make sure to also check out:{" "}
+          . Make sure to also check out:{' '}
           <a
             className="hover:underline font-semibold"
             href="https://ts-interview-prep.vercel.app"
             target="_blank"
-          >
+            rel="noreferrer">
             TypeScript Interview Prep
           </a>
         </p>

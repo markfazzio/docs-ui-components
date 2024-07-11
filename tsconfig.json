@@ -16,10 +16,7 @@
     "resolveJsonModule": true,
     "rootDir": "src",
     "target": "ESNext",
-    "sourceMap": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "sourceMap": true
   },
   "exclude": ["node_modules", "dist", "src/stories", "src/**/*.stories.tsx"]
 }

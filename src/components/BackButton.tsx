@@ -1,4 +1,4 @@
-import { ThemeProps } from '@/common/interfaces';
+import { ThemeProps } from '../common/interfaces';
 
 interface BackButtonProps extends ThemeProps {
   label?: string;

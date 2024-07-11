@@ -1,7 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
-const viteTsconfig = require('vite-tsconfig-paths');
-const tsconfigPaths = viteTsconfig.default;
 const { mergeConfig } = require('vite');
 
 const config: StorybookConfig = {
@@ -12,11 +10,6 @@ const config: StorybookConfig = {
   addons: ['@storybook/addon-controls', '@storybook/preset-scss'],
   core: {
     builder: '@storybook/builder-vite',
-  },
-  async viteFinal(config) {
-    return mergeConfig(config, {
-      plugins: [tsconfigPaths()],
-    });
   },
 };
 

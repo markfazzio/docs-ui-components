@@ -4,7 +4,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import copy from 'rollup-plugin-copy';
 import { dts } from 'rollup-plugin-dts';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import tsConfigPaths from 'rollup-plugin-tsconfig-paths';
 import rollupPluginPostCss from 'rollup-plugin-postcss';
 import pkg from './package.json' assert { type: 'json' };
 
@@ -27,8 +26,6 @@ export default [
     input: './src/index.ts',
     plugins: [
       peerDepsExternal(),
-      tsConfigPaths(),
-      // typescriptPaths(),
 
       rollupPluginPostCss({
         config: {
@@ -41,13 +38,6 @@ export default [
           insertAt: 'top',
         },
       }),
-
-      // scss({
-      //   processor: () => postcss([autoprefixer()]),
-      //   fileName: pkg.css,
-      //   failOnError: true,
-      //   // prefix: '@use "./src/styles";',
-      // }),
 
       // Allows node_modules resolution
       resolve({
@@ -93,7 +83,7 @@ export default [
   {
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [tsConfigPaths(), dts()],
+    plugins: [dts()],
     external: [/\.(s?css|sass)$/],
   },
 ];

@@ -1,5 +1,5 @@
-import { ThemeProps } from '@/common/interfaces';
 import { useState } from 'react';
+import { ThemeProps } from '../common/interfaces';
 
 interface NavbarItemProps {
   label: string;

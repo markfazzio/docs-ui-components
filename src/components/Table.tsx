@@ -1,4 +1,4 @@
-import { TableColumnProps, TableRowProps } from '@/common/interfaces';
+import { TableColumnProps, TableRowProps } from '../common/interfaces';
 
 interface TableProps {
   columns: Array<TableColumnProps>;
